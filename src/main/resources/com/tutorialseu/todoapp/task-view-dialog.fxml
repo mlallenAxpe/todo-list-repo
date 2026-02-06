@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="20" styleClass="view-dialog-pane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tutorialseu.todoapp.controller.TaskViewDialogController">
+    <Label styleClass="dialog-title" text="View Task" />
+    <MFXTextField fx:id="taskTitleField" floatingText="Title" prefWidth="400" styleClass="task-title" />
+    <TextArea fx:id="taskDescriptionField" prefHeight="300.0" prefWidth="400.0" promptText="Task Description" wrapText="true" />
+    <MFXComboBox fx:id="statusComboBox" prefHeight="30" prefWidth="400" promptText="Select Status" styleClass="task-status" />
+    <Label styleClass="commentLabel" text="Comments" />
+    <HBox spacing="10">
+        <MFXTextField fx:id="commentField" prefWidth="300" promptText="Add Comment" />
+        <MFXButton onAction="#handleAddComment" prefWidth="70" styleClass="add-comment-button" text="Add" />
+    </HBox>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="400.0" vbarPolicy="NEVER">
+        <VBox fx:id="commentList" prefHeight="300" prefWidth="400" spacing="5" />
+    </ScrollPane>
+    <HBox alignment="CENTER_RIGHT" spacing="20">
+        <Region HBox.hgrow="ALWAYS" />
+        <MFXButton onAction="#handleCancel" prefHeight="30" prefWidth="80" styleClass="cancel-button" text="Cancel" />
+        <MFXButton onAction="#handleDelete" prefHeight="30" prefWidth="80" styleClass="delete-button" text="Delete" />
+        <MFXButton onAction="#handleUpdate" prefHeight="30" prefWidth="80" styleClass="update-button" text="Update" />
+    </HBox>
+</VBox>
